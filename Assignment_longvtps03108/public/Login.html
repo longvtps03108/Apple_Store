@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    
+    <!-- Title Tag -->
+    <title>LOCGIN</title>
+<!--
+
+November Template
+
+http://www.templatemo.com/tm-473-november
+
+-->
+    <!-- <<Mobile Viewport Code>> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
+            
+    <!-- <<Attched Stylesheets>> -->
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/media.css" type="text/css" />
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,400italic,800,700' rel='stylesheet' type='text/css'>    
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/hoverpicbig.css">
+
+</head>
+
+<body>
+
+<!-- \\ Begin Holder \\ -->
+<div class="DesignHolder">
+	<!-- \\ Begin Frame \\ -->
+	<div class="LayoutFrame">
+        <!-- \\ Begin Header \\ -->
+        <header>
+            <div class="Center">
+                <div class="site-logo">
+                	
+                	<h1><a href="#">Apple<span>Store</span></a></h1>
+                </div>
+               <div id="mobile_sec">
+               <div class="mobile"><i class="fa fa-bars"></i><i class="fa fa-times"></i></div>
+                <div class="menumobile">
+                    <!-- \\ Begin Navigation \\ -->
+                    <nav class="Navigation">
+                        <ul>
+                        <li>
+                        <a href="index.html">Trang chủ</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                        <li>
+                        <a href="Thongtin.html">Thông tin</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                        <li>
+                        <a href="sanpham.html">Sản Phẩm</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                        <li >
+                       <a href="LienHe.html">Liên hệ</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                       <li class="active">
+                        <a href="Login.html">Admin</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                        </ul>
+                    </nav>
+                    <!-- // End Navigation // -->
+				</div>
+				</div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- // End Header // -->
+        
+        
+        <!-- \\ Begin Pricing Section \\ -->
+        <div class="Pricing_sec" id="pricing">
+            <div class="Center">
+
+                <h2>ĐĂNG NHẬP</h2>
+                
+                <div id="container">
+                    
+                    <form>
+                    
+                    <label for="name">Username:</label>
+                    
+                    <input type="name" id="username">
+                    
+                    <label for="username">Password:</label>
+                    
+                    <p><a href="#">Forgot your password?</a>
+                    
+                    <input type="password" id="password" >
+                    
+                    <div id="lower">
+                    
+                    <input type="checkbox"><label class="check" for="checkbox">Keep me logged in</label>
+                    
+                    <input type="submit" type="button"  value="Login" onclick="login();" >
+					
+                    
+                    </div>
+        
+                    </form>
+        
+    </div>
+
+                
+            </div>
+        </div>
+        <!-- // End Pricing Section // -->
+        
+<!-- // End Design Holder // -->
+<div id="loader-wrapper">
+<div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+
+<!-- <<Attched Javascripts>> -->
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.sudoSlider.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/modernizr.js"></script>
+
+</body>
+<script >
+ // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAPFiBu_3MkpfYWX9iBkUkqW0Qjf9MpisI",
+	    authDomain: "longvtps03108.firebaseapp.com",
+	    databaseURL: "https://longvtps03108.firebaseio.com",
+	    storageBucket: "longvtps03108.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+    
+    function login(){
+		var username = document.getElementById("username").value;
+		var pass = document.getElementById("password").value;
+		
+		firebase.auth().signInWithEmailAndPassword(username, pass).catch(function(error) {
+		  // Handle Errors here.
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  toast.innerHTML = errorMessage;
+		  toast.className = "show";
+		  setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+		});
+	  }
+	   firebase.auth().onAuthStateChanged(function(user) {
+		
+				location = "Updata.html";
+			
+	  });
+	   firebase.auth().onAuthStateChanged(function(user) {
+		  if (user) {
+			console.log("Login");
+		  } else {
+			console.log("Logout");
+		  }
+		});
+</script>
+</html>

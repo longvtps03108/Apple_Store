@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    
+    <!-- Title Tag -->
+    <title>Updata </title>
+<!--
+
+November Template
+
+http://www.templatemo.com/tm-473-november
+
+-->
+    <!-- <<Mobile Viewport Code>> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
+            
+    <!-- <<Attched Stylesheets>> -->
+    <link rel="stylesheet" href="css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="css/media.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,600italic,400italic,800,700' rel='stylesheet' type='text/css'>    
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/hoverpicbig.css">
+        <style type="text/css">
+
+            * { margin: 0; padding: 0; }
+
+            html { height: 100%; font-size: 62.5% }
+
+            body { height: 100%; background-color: #FFFFFF; font: 1.2em Verdana, Arial, Helvetica, sans-serif; }
+
+
+            /* ==================== Form style sheet ==================== */
+
+            table.form { margin: 25px 0 0 29px; border-collapse: collapse; }
+
+            table.form th, table.form td { padding: 4px 5px; text-align: left; font-weight: normal; }
+
+            table.form label { font-family: Verdana, Arial, Helvetica, sans-serif; color: #181818; margin-right: 12px; }
+            table.form td span { font-size: 0.9em; color: #181818; margin-left: 8px; }
+            table.form td samp { font: 1em Verdana, Arial, Helvetica, sans-serif; color: #000000; }
+
+            table.form input { width: 340px; }
+            table.form input.answer { width: auto; }
+            table.form textarea { width: 385px; height: 160px; }
+
+            table.form input.inp-text, table.form input.answer, table.form textarea
+            { border: 1px solid #909090; border-right: 1px solid #BBBBBB; border-bottom: 1px solid #BBBBBB; padding: 3px; }
+            table.form input:focus, table.form textarea:focus { border: 1px solid #606060; } /* does not work in IE */
+
+            table.form th.message-up { vertical-align: top !important; }
+
+            table.form label.invisible { visibility: hidden; }
+
+            table.form td.submit-button-right { text-align: right !important; }
+            table.form input.submit-text { font: 1.4em Georgia, "Times New Roman", Times, serif; letter-spacing: 1px; width: auto; }
+
+            /* ==================== Form style sheet END ==================== */
+
+            </style>
+</head>
+<body>
+
+<!-- \\ Begin Holder \\ -->
+<div class="DesignHolder">
+	<!-- \\ Begin Frame \\ -->
+	<div class="LayoutFrame">
+        <!-- \\ Begin Header \\ -->
+        <header>
+            <div class="Center">
+                <div class="site-logo">
+                	
+                	<h1><a href="#">Apple<span>Store</span></a></h1>
+                </div>
+               <div id="mobile_sec">
+               <div class="mobile"><i class="fa fa-bars"></i><i class="fa fa-times"></i></div>
+                <div class="menumobile">
+                    <!-- \\ Begin Navigation \\ -->
+                    <nav class="Navigation">
+                        <ul>
+                        <li>
+                        <a href="index.html">Trang chủ</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                        <li>
+                        <a href="Thongtin.html">Thông tin</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                        <li>
+                        <a href="Sanpham.html">Sản Phẩm</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                       
+                        <li>
+                        <a href="LienHe.html">Liên hệ</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                        <li >
+                        <a href="Login.html">Admin</a>
+                        <span class="menu-item-bg"></span>
+                        </li>
+                        </ul>
+                    </nav>
+                    <!-- // End Navigation // -->
+				</div>
+				</div>
+                <div class="clear"></div>
+            </div>
+        </header>
+        <!-- // End Header // -->
+        
+         <div class="bgcolor"></div>
+        <!-- \\ Begin Container \\ -->
+        <div id="Container">
+        
+        <!-- \\ Begin Services Section \\ -->
+     <div class="Pricing_sec" id="pricing">
+            <div class="Center">
+              <form action="" method="post">
+        <table class="form">
+            <tr>
+                <th><label for="input-one"><strong>ID :</strong></label></th>
+                <td><input class="inp-text" name="input-one-name" id="input-one" type="text" size="30" /></td>
+            </tr>
+
+            <tr>
+                <th><label for="input-two"><strong>Tên Sản Phẩm : </strong></label></th>
+                <td><input class="inp-text" name="input-two-name" id="input-two" type="text" size="30" /></td>
+            </tr>
+
+            <tr>
+                <th><label for="input-three"><strong>Giá :</strong></label></th>
+                <td><input class="inp-text" name="input-three-name" id="input-three" type="text" size="30" /></td>
+            </tr>
+
+            </table>
+        
+
+                <label for="file" style="right:30%" >Chọn Ảnh </label>
+                <input type="file" id="file" name="file" accept="image/jpg, image/jpeg, image/gif, image/png" />
+             
+                  <br/>
+                <tr>
+                <td class="submit-button-right" colspan="2"><input class="submit-text" type="submit" value="SEND" /></td>
+                </tr>
+        </form>
+				<input type="submit" type="button"  value="Logout" onclick="logout();" >
+
+        </div>
+                </div>
+
+        <!-- // End Services Section // -->
+        
+        
+<!-- // End Design Holder // -->
+<div id="loader-wrapper">
+<div id="loader"></div>
+
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+
+</div>
+
+<!-- <<Attched Javascripts>> -->
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.sudoSlider.min.js"></script>
+<script type="text/javascript" src="js/global.js"></script>
+<script type="text/javascript" src="js/modernizr.js"></script>
+
+</body>
+<script>
+		// Initialize Firebase
+		var config = {
+	    apiKey: "AIzaSyAPFiBu_3MkpfYWX9iBkUkqW0Qjf9MpisI",
+	    authDomain: "longvtps03108.firebaseapp.com",
+	    databaseURL: "https://longvtps03108.firebaseio.com",
+	    storageBucket: "longvtps03108.appspot.com",
+	  };
+	  firebase.initializeApp(config);
+		
+		
+
+		function logout(){
+			firebase.auth().signOut().then(function() {
+			  location = "Login.html";
+			}, function(error) {
+			  // An error happened.
+			});
+		}
+		</script>
+		
+</html>
